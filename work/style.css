@@ -1,0 +1,264 @@
+@font-face {
+  font-family: 'A-Arigatou-Gozaimasu';
+  src: url("../about/assets/fonts/a-arigatou-gozaimasu-font/ArigatouGozaimasu-1Gnqg.ttf");
+}
+@font-face {
+  font-family: 'Champagne & Limousines';
+  src: url("../about/assets/fonts/champagne-and-limousines-font/ChampagneAndLimousines-7KRB.ttf");
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Champagne & Limousines', sans-serif;
+  overflow-x: hidden;
+  background: white;
+  color: #268ec3;
+}
+body, html {
+  margin: 0px;
+  padding: 0px;
+}
+main {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #268ec3;
+  padding: 20px 40px;
+  z-index: 1000;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo-img {
+  height: 30px;
+}
+.nav-links {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-family: 'A-Arigatou-Gozaimasu';
+  font-size: 21px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: -8px; 
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition: width 0.4s ease;
+}
+.nav-links a:hover::before {
+  width: 100%;
+}
+.nav-links a::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+.pink {
+  background: #268ec3;
+  color: white;
+}
+.white {
+  background: white;
+  color: #ec2a99;
+}
+
+.about-title,
+.section-title,
+.name {
+  font-family: 'A-Arigatou-Gozaimasu';
+}
+.about-title {
+  font-size: 48px;
+  margin-bottom: 10px;
+	line-height: 22px;
+}
+.about-content-heading {
+		font-size: 24px;
+ 	text-align: center;
+	font-weight: bold;
+}
+
+.about-content {
+		font-size: 21px;
+ 	text-align: center;
+	padding-left: 250px;
+	padding-right: 250px;
+}
+
+.tagline {
+  font-size: 48px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.intro {
+  max-width: 800px;
+  margin: auto;
+  font-size: 28px;
+  line-height: 1.9;
+}
+.timeline {
+  max-width: 800px;
+  margin: auto;
+  font-size: 21px;
+  line-height: 1.9;
+  text-align: left;
+  padding-left: 40px;
+	margin-bottom: 30px;
+}
+
+.svg-wave {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.wave {
+  display: block;
+  width: 200%;
+  height: 100px;
+  animation: waveMove 8s linear infinite;
+}
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+}
+
+
+.footer {
+  padding: 80px 20px;
+  text-align: center;
+	width: 100%;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 10px;
+	margin-top: 150px;
+}
+.social-icons img {
+  width: 28px;
+  opacity: 0.6;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.social-icons img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+.footer-text {
+  font-size: 13px;
+  color: #aaa;
+	 font-family: 'A-Arigatou-Gozaimasu';
+	margin-bottom: 150px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .nav-links { gap: 20px; }
+  .logo-img { height: 32px; }
+  .member-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .member {
+    width: 140px;
+    height: 140px;
+  }
+  .name { font-size: 14px; }
+}
+
+
+.works-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #268ec3;
+  color: #268ec3;
+  padding: 0;  
+  margin: 0;
+}
+
+
+.work-tile {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  margin: 0;
+}
+
+
+.work-tile img {
+  width: 100vw;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+	margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.work-tile:hover img {
+  transform: scale(1.03);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'A-Arigatou-Gozaimasu';
+  color: white;
+  font-size: 36px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+.overlay-text-Ssub {
+	 position: absolute;
+  top: 84%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Champagne & Limousines', sans-serif;
+  color: white;
+  font-size: 21px;
+  letter-spacing: 2px;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
